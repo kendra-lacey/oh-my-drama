@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/dramas/index.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>List of Dramas</h1>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Language</th>
+        <th>Average-Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% dramas.forEach(drama => { %>
+        <tr>
+          <td><%= drama.title %></td>
+          <td><%= drama.language %></td>
+          <td>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</main>
+
+<%- include('../partials/footer') %>
