@@ -1,5 +1,6 @@
 import { Router } from "express";
 import * as dramasCtrl from '../controllers/dramas.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -10,7 +11,7 @@ router.get('/', dramasCtrl.index)
 router.get('/new', dramasCtrl.new)
 
 //POST/DRAMAS/NEW
-router.post('/new', dramasCtrl.create)
+router.post('/new', isLoggedIn, dramasCtrl.create)
 
 export {
   router
