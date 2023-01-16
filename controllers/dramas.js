@@ -16,7 +16,7 @@ function index(req, res) {
 
 function newDrama(req, res) {
   res.render('dramas/new', {
-    title: 'Add Drama'
+    title: 'Add a Drama Series'
   })
   .catch(err => {
     console.log("error")

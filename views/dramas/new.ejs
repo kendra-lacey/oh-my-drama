@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/dramas/index.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/dramas" method="POST">
+    <div>
+      <label for="title-input">Title:</label>
+      <div ">
+        <input type="text" name="title" id="title-input" placeholder="Drama Title">
+      </div>
+    </div>
+    <div>
+      <label for="language-select" id="language-select">Language:</label>
+      <div>
+        <select name="mpaaRating" id="mpaa-rating-select">
+          <option value="Korean">Korean</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Janpanese">Janpanese</option>
+          <option value="Tiawanese">Tiawanese</option>
+        </select>
+      </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
