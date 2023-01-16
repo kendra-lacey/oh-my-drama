@@ -15,6 +15,7 @@ function index(req, res) {
 }
 
 function newDrama(req, res) {
+  console.log('controller/newDrama')
   res.render('dramas/new', {
     title: 'Add a Drama Series'
   })
@@ -25,18 +26,18 @@ function newDrama(req, res) {
 }
 
 function create(req, res) {
+  // Use drama model to create a drama using the form data in req.body
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
-  // USe drama model to create a drama using the form data in req.body
-  Drama.create(req.body) 
-    .then(drama => {
-      res.redirect('dramas/')
-    })
-    .catch(err => {
-      console.log("error")
-      res.redirect('/new')
-    })
+  Drama.create(req.body)
+  .then(drama => {
+    res.redirect('/dramas/new')
+  })
+  .catch(err => {
+    console.log("error")
+    res.redirect('/new')
+  })
   }
 
 

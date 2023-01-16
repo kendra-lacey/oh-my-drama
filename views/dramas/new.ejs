@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/dramas/index.css" />
+<link rel="stylesheet" href="/stylesheets/dramas/new.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -14,12 +14,13 @@
     <div>
       <label for="language-select" id="language-select">Language:</label>
       <div>
-        <select name="mpaaRating" id="mpaa-rating-select">
+        <select name="language" id="language">
           <option value="Korean">Korean</option>
           <option value="Chinese">Chinese</option>
           <option value="Janpanese">Janpanese</option>
           <option value="Tiawanese">Tiawanese</option>
         </select>
+        <button type="submit">Add Drama</button>
       </div>
     </div>
 </main>

@@ -8,8 +8,6 @@ const dramaSchema = new Schema({
     type: String,
     enum: ['Korean','Chinese', 'Japanese', 'Taiwanese']
   }, 
-  // reviews: [reviewSchema],
-  // stars: [{type: Schema.Types.ObjectId, ref: 'Star'}],
 }, {
   timestamps: true
   })
