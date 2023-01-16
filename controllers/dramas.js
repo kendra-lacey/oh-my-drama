@@ -40,11 +40,24 @@ function create(req, res) {
   })
   }
 
-
+function show(req, res) {
+  Drama.findById(req.params.id)
+  .then(drama => {
+    res.render('dramas/show', {
+      title: 'Drama Deets',
+      drama: drama
+    })
+  })
+  .catch(err => {
+    console.log("error")
+    res.redirect('/new')
+  })
+}
 
 
 export {
   index,
   newDrama as new,
   create,
+  show
 }
