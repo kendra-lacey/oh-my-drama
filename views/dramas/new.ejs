@@ -3,6 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <% if (user) { %>
   <h1><%= title %></h1>
   <form id="new-form" action="/dramas" method="POST">
     <div>
@@ -23,6 +24,8 @@
         <button type="submit">Add Drama</button>
       </div>
     </div>
+  </form>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

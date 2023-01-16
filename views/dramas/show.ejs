@@ -21,13 +21,13 @@
         </tr>
     </tbody>
   </table>
-  <h2>Reviews</h2>
+  <h2>Rate This Drama</h2>
   <form 
     id="add-review-form"
-    action="/movies/<%= movie._id %>/reviews"
+    action="/dramas/<%= drama._id %>/reviews"
     method="POST"
   >
-    <label for="content-textarea">Review:</label>
+    <label for="content-textarea">Comments:</label>
     <textarea name="content" id="content-textarea"></textarea>
     <label for="rating-select">Rating:</label>
     <select name="rating" id="rating-select">
@@ -35,17 +35,23 @@
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
-      <option value="5" selected>5</option>
+      <option value="5">5</option>
+      <option value="1">6</option>
+      <option value="2">7</option>
+      <option value="3">8</option>
+      <option value="4">9</option>
+      <option value="5"selected>10</option>
     </select>
     <button type="submit">Add Review</button>
   </form>
+  <h2>Reviews 🌶️</h2>
 
 	<% if (drama.reviews.length) { %>
     <table>
       <thead>
         <tr>
           <th>Date</th>
-          <th>Review</th>
+          <th>Comments</th>
           <th>Rating</th>
         </tr>
       </thead>

@@ -54,10 +54,37 @@ function show(req, res) {
   })
 }
 
+function addReview(req, res) {
+  //find drama by _id
+  Drama.findById(req.params.id)
+  .then(drama => {
+    //add the logged in user's profile _id to req.body
+    req.body.reviewer = req.user.profile._id
+    // push req.body form data into the embedded reviewSchema
+    drama.reviews.push(req.body)
+    // save the updated drama document
+    drama.save()
+    .then(() => {
+      //redirect back to drama show view
+      res.redirect(`/dramas/${drama._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+
 
 export {
   index,
   newDrama as new,
   create,
-  show
+  show,
+  addReview,
 }
