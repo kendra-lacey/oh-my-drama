@@ -16,6 +16,9 @@ router.get('/:id', dramasCtrl.show)
 //POST/DRAMAS/NEW
 router.post('/', isLoggedIn, dramasCtrl.create)
 
+//POST/DRAMAS/:ID/REVIEWS
+router.post('/:id/reviews', dramasCtrl.createReview)
+
 
 export {
   router
