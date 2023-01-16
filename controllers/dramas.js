@@ -14,8 +14,19 @@ function index(req, res) {
   })
 }
 
+function newDrama(req, res) {
+  res.render('dramas/new', {
+    title: 'Add Drama'
+  })
+  .catch(err => {
+    console.log("error")
+    res.redirect('/')
+  })
+}
+
 
 
 export {
   index,
+  newDrama as new,
 }

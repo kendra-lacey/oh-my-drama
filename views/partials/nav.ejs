@@ -4,8 +4,10 @@
 </head>
 <body>
   <nav>
-    <a href="/dramas">All Dramas</a>
+    
     <% if (user) { %>
+      <a href="/dramas">All Dramas</a>
+      <a href="/dramas/new">Add Drama</a>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
       </a>

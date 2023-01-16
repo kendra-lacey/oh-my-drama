@@ -6,6 +6,9 @@ const router = Router()
 // GET/ DRAMAS
 router.get('/', dramasCtrl.index)
 
+//GET/DRAMAS/NEW
+router.get('/new', dramasCtrl.new)
+
 export {
   router
 }
