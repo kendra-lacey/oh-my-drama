@@ -25,7 +25,6 @@ function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
-  req.body.owner = req.user.profile._id
   Drama.create(req.body)
   .then(drama => {
     res.redirect('/dramas/new')
@@ -38,7 +37,10 @@ function create(req, res) {
 
 function show(req, res) {
   Drama.findById(req.params.id)
-  .populate('reviews.reviewer')
+  .populate([
+    {path:"owner"},
+    {path:"reviews.reviewer"}
+  ])
   .then(drama => {
     res.render('dramas/show', {
       title: 'Drama Deets',
@@ -66,15 +68,23 @@ function edit(req, res) {
   }
 
   function update(req, res) {
-    Drama.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    Drama.findById(req.params.id)
     .then(drama => {
-      res.redirect(`dramas/${drama._id}`)
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/dramas')
-    })
-  }
+      if (drama.owner.equals(req.user.profile._id)) {
+        drama.updateOne(req.body)
+        .then(()=> {
+          res.redirect(`/dramas/${drama._id}`)
+        })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+
+    res.redirect('/')
+  })
+}
 
 function addReview(req, res) {
   //find drama by _id
