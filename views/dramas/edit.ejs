@@ -1,0 +1,27 @@
+<%- include('../partials/html-head.ejs') %>
+<link rel="stylesheet" href="/stylesheets/movies/edit.css">
+<%- include('../partials/nav.ejs') %>
+
+<main>
+    <h1><%= title %></h1>
+    <form id="edit-form" 
+    action="/dramas/<%= drama._id%>?_method=PUT" 
+    method="POST"
+    >
+      <label for="title-input">Title:</label>
+      <input type="text" value="<%= drama.title %>" name="title" id="title-input" autocomplete="off">
+      <label for="language-select" id="language-select">Language:</label>
+      <select name="language" id="language">
+        <option value="<%= drama.language %>">
+          <%= drama.language %> 
+          </option>
+        <option value="Korean">Korean</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Janpanese">Janpanese</option>
+        <option value="Taiwanese">Taiwanese</option>
+      </select>
+      <button type="submit">Save Drama</button>
+    </form>
+</main>
+
+<%- include('../partials/footer.ejs') %>

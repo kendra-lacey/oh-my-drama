@@ -55,14 +55,14 @@ function edit(req, res) {
     .then(drama => {
       res.render('dramas/edit', {
         title: 'Edit Drama',
-        drama
+        drama: drama
       })
     })
     .catch(err => {
       console.log(err)
       res.redirect('/')
     })
-}
+  }
 
 function addReview(req, res) {
   //find drama by _id
