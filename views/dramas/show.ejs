@@ -60,6 +60,15 @@
         <td><%= review.reviewer.name %></td>
         <td><%= review.comment %></td>
         <td><%= review.rating %></td>
+        <td><% if (review.review.equals(user?.profile)) { %>
+          <form 
+            action="/dramas/<%= drama._id %>/reviews/<%= review._id %>?_method=DELETE" 
+            method="POST"
+            class="inline"
+          >
+            <button class="btn" type="submit">Delete Review</button>
+          </form>
+          <% } %> 
         </td>
       </tr>
       <% }) %> 

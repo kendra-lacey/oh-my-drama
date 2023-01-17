@@ -37,10 +37,7 @@ function create(req, res) {
 
 function show(req, res) {
   Drama.findById(req.params.id)
-  .populate([
-    {path:"owner"},
-    {path:"reviews.reviewer"}
-  ])
+  .populate('reviews.reviewer')
   .then(drama => {
     res.render('dramas/show', {
       title: 'Drama Deets',
@@ -81,7 +78,6 @@ function edit(req, res) {
   })
   .catch(err => {
     console.log(err)
-
     res.redirect('/')
   })
 }
