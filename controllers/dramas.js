@@ -64,6 +64,17 @@ function edit(req, res) {
     })
   }
 
+  function update(req, res) {
+    Drama.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(drama => {
+      res.redirect(`drama/${drama._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/dramas')
+    })
+  }
+
 function addReview(req, res) {
   //find drama by _id
   Drama.findById(req.params.id)
@@ -97,5 +108,6 @@ export {
   create,
   show,
   edit,
+  update,
   addReview,
 }
