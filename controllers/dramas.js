@@ -15,13 +15,8 @@ function index(req, res) {
 }
 
 function newDrama(req, res) {
-  console.log('controller/newDrama')
   res.render('dramas/new', {
     title: 'Add a Drama Series'
-  })
-  .catch(err => {
-    console.log("error")
-    res.redirect('/')
   })
 }
 
