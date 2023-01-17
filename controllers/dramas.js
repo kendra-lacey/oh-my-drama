@@ -50,6 +50,20 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Drama.findById(req.params.id)
+    .then(drama => {
+      res.render('dramas/edit', {
+        title: 'Edit Drama',
+        drama
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+}
+
 function addReview(req, res) {
   //find drama by _id
   Drama.findById(req.params.id)
@@ -82,5 +96,6 @@ export {
   newDrama as new,
   create,
   show,
+  edit,
   addReview,
 }
