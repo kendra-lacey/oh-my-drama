@@ -18,6 +18,7 @@ const dramaSchema = new Schema({
     type: String,
     enum: ['Korean','Chinese', 'Japanese', 'Taiwanese']
   },
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema]
 }, {
   timestamps: true

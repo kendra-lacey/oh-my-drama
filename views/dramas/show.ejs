@@ -8,9 +8,11 @@
     <div>Title:</div>
     <div>
       <%= drama.title %>
-      <a href="/dramas/<%= drama._id %>/edit">
-        <button>Edit Drama</button>
-      </a>
+      <% if (drama.owner) { %>
+        <a href="/dramas/<%= drama._id %>/edit">
+          <button class="btn">Edit this Drama</button>
+        </a>
+        <% } %>
     </div>
     <div>Language:</div>
     <div><%= drama.language %></div>
