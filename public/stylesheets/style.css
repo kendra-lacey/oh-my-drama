@@ -8,26 +8,56 @@ html {
 *::after {
   /* All ::after pseudo-elements */
   /* height & width will now include border & padding by default but can be overridden as needed */
-  box-sizing: inherit;
+  box-sizing: border-box;
+  margin: 0%;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #1a1a1a;
+  background: #ffbdc9;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
-  margin: 0;
+    margin: 0%;
 }
 
+
 nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  background-color: #fff;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  min-height: 50px;
+  justify-content: center;
+  padding: 5px;
+  box-shadow: 0 25px 20px -20px rgba(0,0,0,0.4);
+  min-height: 20px;
 }
+nav > i {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav > a {
+  margin: 10px;
+  font-size: 20px;
+ font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 100px;
+  color: #f8edeb;
+}
+
+nav > a:visited {
+  color: #8e9aaf;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #ffbdc9;
+}
+
 
 main {
   display: flex;

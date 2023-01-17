@@ -3,13 +3,13 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const reviewSchema = new Schema ({
-  comments: String,
+  comment: String,
   rating: {
     type: Number,
     min: 1,
     max: 10
   },
-  reviewer: {type: Schema.Types.ObjectId, ref: 'Profile'}
+  reviewer: {type: Schema.Types.ObjectId, ref: "Profile"},
 })
 
 const dramaSchema = new Schema({
@@ -19,7 +19,6 @@ const dramaSchema = new Schema({
     enum: ['Korean','Chinese', 'Japanese', 'Taiwanese']
   },
   reviews: [reviewSchema]
-
 }, {
   timestamps: true
   })

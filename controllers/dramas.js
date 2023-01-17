@@ -42,6 +42,7 @@ function create(req, res) {
 
 function show(req, res) {
   Drama.findById(req.params.id)
+  .populate('reviews.reviewer')
   .then(drama => {
     res.render('dramas/show', {
       title: 'Drama Deets',
@@ -58,7 +59,7 @@ function addReview(req, res) {
   //find drama by _id
   Drama.findById(req.params.id)
   .then(drama => {
-    //add the logged in user's profile _id to req.body
+    // add the logged in user's profile _id to req.body
     req.body.reviewer = req.user.profile._id
     // push req.body form data into the embedded reviewSchema
     drama.reviews.push(req.body)
@@ -70,12 +71,12 @@ function addReview(req, res) {
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/')
+      res.redirect('/dramas')
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/dramas')
   })
 }
 
