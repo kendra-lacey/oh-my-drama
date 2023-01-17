@@ -4,23 +4,21 @@
 
 <main>
   <h1><%= title %> </h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Language</th>
-        <th>Rating</th>
-        <th>Stars</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><%= drama.title %></td>
-          <td><%= drama.language %></td>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+  <section> 
+    <div>Title:</div>
+    <div>
+      <%= drama.title %>
+      <a href="/dramas/<%= drama._id %>/edit">
+        <button>Edit Drama</button>
+      </a>
+    </div>
+    <div>Language:</div>
+    <div><%= drama.language %></div>
+    <div>Rating:</div>
+    <div><%= drama.rating %></div>
+    <div>Stars:</div>
+    <div></div>
+    </section>
   <h2>Rate This Drama</h2>
   <form 
   id="add-review-form"
