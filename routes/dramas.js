@@ -13,6 +13,9 @@ router.get('/new', dramasCtrl.new)
 //GET/DRAMAS/:ID
 router.get('/:id', dramasCtrl.show)
 
+//GET/DRAMAS/:ID/EDIT
+router.get('/:id/edit', dramasCtrl.edit)
+
 //POST/DRAMAS/NEW
 router.post('/', isLoggedIn, dramasCtrl.create)
 
