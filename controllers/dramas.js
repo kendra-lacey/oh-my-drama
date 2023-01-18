@@ -107,6 +107,30 @@ function addReview(req, res) {
   })
 }
 
+function deleteReview(req, res) {
+  Drama.findById(req.params.dramaId)
+    .then(drama => {
+      const review = drama.reviews.id(req.params.reviewId)
+      if (review.reviewer.equals(req.user.profile._id)) {
+        drama.reviews.remove(review)
+        drama.save()
+        .then(() => {
+          res.redirect(`/dramas/${drama._id}`)
+        })
+        .catch(err => {
+          console.log(err)
+          res.redirect('/drama')
+        })
+      } else {
+        throw new Error('🚫 Not authorized 🚫')
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/drama')
+    })
+}
+
 
 
 export {
@@ -117,4 +141,5 @@ export {
   edit,
   update,
   addReview,
+  deleteReview
 }
