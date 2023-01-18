@@ -8,9 +8,22 @@ function newStar(req, res) {
       stars
     })
   })
+  .catch(err => {
+    res.redirect("/dramas")
+  })
 }
 
+function create(req, res){
+  Star.create(req.body)
+  .then(star => {
+    res.redirect('/stars/new')
+  })
+  .catch(err => {
+    res.redirect("/dramas")
+  })
+}
 
 export {
   newStar as new,
+  create
 }
