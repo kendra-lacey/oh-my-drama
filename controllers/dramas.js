@@ -139,6 +139,30 @@ function deleteReview(req, res) {
     })
 }
 
+function addToMainChar(req,res) {
+  //find the drama by its id (req.params)
+  Drama.findById(req.params.id)
+  .then(drama => {
+    // add the id of the star (req.body.starId) to the mainChar array
+    drama.mainChar.push(req.body.starId)
+    //save the updated drama document
+    drama.save()
+      .then(() => {
+      //redirect backto the drama show view
+      res.redirect(`/dramas/${drama._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/dramas')
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/dramas')
+      })
+    })
+  }
+
+
 
 
 export {
