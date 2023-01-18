@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import * as performersCtrl from '../controllers/stars.js'
+import * as starsCtrl from '../controllers/stars.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
 // GET/STARS/NEW
-router.get('/new', starsCtrl.new)
+router.get('/new', isLoggedIn, starsCtrl.new)
 
 
 export {

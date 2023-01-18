@@ -8,7 +8,7 @@ const router = Router()
 router.get('/', dramasCtrl.index)
 
 //GET/DRAMAS/NEW
-router.get('/new', dramasCtrl.new)
+router.get('/new', isLoggedIn,dramasCtrl.new)
 
 //GET/DRAMAS/:ID
 router.get('/:id', dramasCtrl.show)

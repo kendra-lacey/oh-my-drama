@@ -8,7 +8,7 @@ const starSchema = new Schema({
   timestamps: true
 })
 
-const Star = mongoose.model('Star', performerSchema)
+const Star = mongoose.model('Star', starSchema)
 
 export {
   Star
