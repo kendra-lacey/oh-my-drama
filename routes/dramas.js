@@ -25,6 +25,8 @@ router.post('/:id/reviews',isLoggedIn, dramasCtrl.addReview)
 //PUT/DRAMAS/:ID
 router.put('/:id', isLoggedIn, dramasCtrl.update)
 
+//DELETE/:DRAMAID/REVIEWS/:REVIEWID
+router.delete('/:dramaId/reviews/:reviewId', isLoggedIn, dramaCtrl.deleteReview)
 
 export {
   router
