@@ -40,9 +40,10 @@ function show(req, res) {
 
   Drama.findById(req.params.id)
   .populate('reviews.reviewer')
-  .populate('mainChar')
+  .populate('mainChars')
   .then(drama => {
-    Star.find({_id: {$nin: drama.mainChar}})
+    console.log(req.body, "show function is working")
+    Star.find({_id: {$nin: drama.mainChars}})
     .then(stars => {
 
       res.render('dramas/show', {
@@ -144,11 +145,11 @@ function addToMainChar(req,res) {
   Drama.findById(req.params.id)
   .then(drama => {
     // add the id of the star (req.body.starId) to the mainChar array
-    drama.mainChar.push(req.body.starId)
+    drama.mainChars.push(req.body.starId)
     //save the updated drama document
     drama.save()
       .then(() => {
-      //redirect backto the drama show view
+      //redirect back to the drama show view
       res.redirect(`/dramas/${drama._id}`)
       })
       .catch(err => {
@@ -173,5 +174,6 @@ export {
   edit,
   update,
   addReview,
-  deleteReview
+  deleteReview,
+  addToMainChar
 }

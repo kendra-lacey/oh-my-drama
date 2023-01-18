@@ -20,7 +20,7 @@ const dramaSchema = new Schema({
   },
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema],
-  mainChar: {type: Schema.Types.ObjectId, ref: 'Star'}
+  mainChars: [{type: Schema.Types.ObjectId, ref: 'Star'}]
 }, {
   timestamps: true
   })

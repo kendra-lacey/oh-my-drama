@@ -16,6 +16,7 @@ function newStar(req, res) {
 function create(req, res){
   Star.create(req.body)
   .then(star => {
+    console.log(req.body)
     res.redirect('/stars/new')
   })
   .catch(err => {
