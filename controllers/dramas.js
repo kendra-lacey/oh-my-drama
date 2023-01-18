@@ -1,4 +1,5 @@
 import { Drama } from '../models/drama.js'
+import { Star } from '../models/star.js'
 
 function index(req, res) {
   Drama.find({})
@@ -39,10 +40,16 @@ function show(req, res) {
 
   Drama.findById(req.params.id)
   .populate('reviews.reviewer')
+  .populate('mainChar')
   .then(drama => {
-    res.render('dramas/show', {
-      title: 'Drama Deets',
-      drama: drama
+    Star.find({_id: {$nin: drama.mainChar}})
+    .then(stars => {
+
+      res.render('dramas/show', {
+        title: 'Drama Deets',
+        drama: drama,
+        stars: stars,
+      })
     })
   })
   .catch(err => {

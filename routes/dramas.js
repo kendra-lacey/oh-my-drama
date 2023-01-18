@@ -22,6 +22,9 @@ router.post('/', isLoggedIn, dramasCtrl.create)
 //POST/DRAMAS/:ID/REVIEWS
 router.post('/:id/reviews',isLoggedIn, dramasCtrl.addReview)
 
+//POST/DRAMAS/:ID/STARS
+router.post('/:id/stars', dramasCtrl.addToMainChar)
+
 //PUT/DRAMAS/:ID
 router.put('/:id', isLoggedIn, dramasCtrl.update)
 

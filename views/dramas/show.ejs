@@ -19,8 +19,22 @@
     <div>Rating:</div>
     <div><%= drama.rating %></div>
     <div>Main-Characters:</div>
-    <div><%= drama.mainCharacters %></div>
+    <ul>
+      <% drama.mainChar.forEach(character => { %>
+        <li><%= character.name %></li>
+      <% }) %>
+    </ul>
     </section>
+
+    <form id="add-star-to-mainChar" action="/dramas/<%= drama._id %>/stars" method="POST">
+      <select name="starId">
+        <% stars.forEach(star => { %>
+          <option value="<%= star._id %>"><%= star.name %></option>
+        <% }) %>
+      </select>
+      <button type="submit">Add to Main Characters</button>
+    </form>
+
   <h2>Rate This Drama</h2>
   <form 
   id="add-review-form"
