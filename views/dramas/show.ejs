@@ -49,13 +49,15 @@
   <table>
     <thead>
       <tr>
-        <th>user</th>
-        <th>comment</th>
+        <th>User</th>
+        <th>Comment</th>
         <th>Rating</th>
       </tr>
     </thead>
     <tbody>
-      <% drama.reviews?.forEach(review => { %> 
+      <% let total = 0 %>
+      <% drama.reviews?.forEach(review => { %>
+        <% total += review.rating %> 
       <tr>
         <td><%= review.reviewer.name %></td>
         <td><%= review.comment %></td>
@@ -70,6 +72,7 @@
           </form>
           <% } %> 
         </td>
+        
       </tr>
       <% }) %> 
   </tbody>

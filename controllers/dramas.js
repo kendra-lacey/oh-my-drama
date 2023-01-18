@@ -36,6 +36,7 @@ function create(req, res) {
   }
 
 function show(req, res) {
+
   Drama.findById(req.params.id)
   .populate('reviews.reviewer')
   .then(drama => {
