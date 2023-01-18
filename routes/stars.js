@@ -7,6 +7,8 @@ const router = Router()
 // GET/STARS/NEW
 router.get('/new', isLoggedIn, starsCtrl.new)
 
+//  POST/STARS/CREATE
+router.post('/',  isLoggedIn, starsCtrl.create)
 
 export {
   router
