@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
@@ -21,7 +21,19 @@ const dramaSchema = new Schema({
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema],
   mainChars: [{type: Schema.Types.ObjectId, ref: 'Star'}]
-}, {
+}, 
+{
+  methods: {
+    getAverage() {
+      let total = 0
+      this.reviews.forEach(review => {
+        total += review.rating
+      });
+      return (total / this.reviews.length.toFixed(1))
+    }
+  }
+},
+{
   timestamps: true
   })
 

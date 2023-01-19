@@ -1,6 +1,7 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+
 <main>
   <h1>hello, <%= user ? user.profile.name : "fellow k-drama lover" %></h1>
   <% if (user?.profile.avatar) { %>

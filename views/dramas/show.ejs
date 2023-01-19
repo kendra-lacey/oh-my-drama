@@ -1,7 +1,11 @@
 <%- include('../partials/html-head.ejs') %>
 <link rel="stylesheet" href="/stylesheets/dramas/show.css" />
 <%- include('../partials/nav.ejs') %>
-
+<% let total = 0 %>
+<% drama.reviews?.forEach(review => { %>
+  <% total += review.rating %>
+<% }) %>
+<%= total = (total / drama.reviews.length).toFixed(1) %>
 <main>
   <h1><%= title %> </h1>
   <section> 
@@ -17,7 +21,9 @@
     <div>Language:</div>
     <div><%= drama.language %></div>
     <div>Rating:</div>
-    <div><%= drama.rating %></div>
+    <div><%= total %></div>
+    <div>Rating v2:</div>
+    <div><%= drama.getAverage() %></div>
     <div>Main-Characters:</div>
     <ul>
       <% drama.mainChars.forEach(character => { %>
@@ -69,9 +75,7 @@
       </tr>
     </thead>
     <tbody>
-      <% let total = 0 %>
       <% drama.reviews?.forEach(review => { %>
-        <% total += review.rating %> 
       <tr>
         <td><%= review.reviewer.name %></td>
         <td><%= review.comment %></td>
