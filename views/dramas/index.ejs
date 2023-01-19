@@ -1,6 +1,6 @@
-<%- include('../partials/html-head.ejs') %>
+<%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/dramas/index.css" />
-<%- include('../partials/nav.ejs') %>
+<%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
@@ -10,7 +10,7 @@
         <th>Title</th>
         <th>Language</th>
         <th>Average-Rating</th>
-        <th></th>
+        <th><img src="/assets/sun.png" alt="lil cute sun"></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +18,7 @@
         <tr>
           <td><%= drama.title %></td>
           <td><%= drama.language %></td>
-          <td></td>
+          <td><%= drama.getAverage() %></td>
           <td><a href="/dramas/<%= drama._id %>">DETAILS</a></td>
           </td>
         </tr>
@@ -27,4 +27,4 @@
   </table>
 </main>
 
-<%- include('../partials/footer.ejs') %>
+<%- include('../partials/footer') %>

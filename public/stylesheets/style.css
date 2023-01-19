@@ -10,17 +10,19 @@ html {
   /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: border-box;
   margin: 0%;
-  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --serif: 'Inknut Antiqua', serif;
+  --mono: 'IBM Plex Mono', monospace;
 }
 
 body {
-  background: #ffbdc9;
-  color: #f6f6f6;
+  height: 100%;
+  background: linear-gradient(90deg,#fec89a 50%, #f9dcc4 45%);
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
-    margin: 0%;
-    background-image: inherit;
+margin: 0%;
+font-style: normal;
+font-weight: 400;
 }
 
 
@@ -33,7 +35,7 @@ nav {
   padding: 5px;
   box-shadow: 0 25px 20px -20px rgba(0,0,0,0.4);
   min-height: 10px;
-  max-height: 25px;
+  max-height: 40px;
 }
 nav > i {
   width: 34px;
@@ -44,21 +46,23 @@ nav > i {
 nav > a {
   margin: 10px;
   font-size: 20px;
- font-weight: bold;
   text-decoration: none;
+  font-family: var(--mono);
+  font-weight:bold ;
   padding: 10px;
-  border-radius: 100px;
   color: #f8edeb;
+  align-items: center;
 }
 
 nav > a:visited {
-  color: #8e9aaf;
+  color: #d44950;
 }
 
-nav > a:hover {
+/* nav > a:hover {
   color: white;
   background-color: #ffbdc9;
-}
+  max-height: 30px;
+} */
 
 
 main {
@@ -70,4 +74,8 @@ main {
 
 .right {
   margin-left: auto;
+}
+
+nav > button {
+  align-self: center;
 }

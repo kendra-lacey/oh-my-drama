@@ -3,20 +3,24 @@
 <%- include('../partials/nav.ejs') %>
 
 <main>
-  <body style="background-image: url(/stars.jpg);">
-	<h1><%= title %></h1>
-  <p>Please first ensure that the Star (actor/actress) is not in the dropdown
-    <select>
-      <% stars.forEach(function(star) { %>
-        <option><%= star.name %></option>
-      <% }) %>
-    </select>
-  </p>
-  <form id="add-star-form" action="/stars" method="POST">
-    <label for="name-input">Name:</label>
-    <input type="text" name="name" id="name-input">
-    <button type="submit">Add a Star</button>
-  </form>
+  <body style="background-image: url(/assets/stars.png);">
+  <div class = "background">
+    <div class="transparent-box">
+	<h1><%= title %> <img src="/assets/shooting-star.png" alt="litle shooting star"></h1>
+      <p>Please first ensure that the Star (actor/actress) is not in the dropdown
+      <select>
+        <% stars.forEach(function(star) { %>
+          <option><%= star.name %></option>
+        <% }) %>
+      </select>
+      </p>
+      <form id="add-star-form" action="/stars" method="POST">
+      <label for="name-input">Name:</label>
+      <input type="text" name="name" id="name-input">
+      <button type="submit">Add a Star</button>
+    </form>
+    </div>
+  </div>
   </body>
 </main>
 

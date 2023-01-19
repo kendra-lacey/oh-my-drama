@@ -1,9 +1,46 @@
 body {
   height: 100%;
-  background-color: azure;
+  background: linear-gradient(90deg,#fec89a 50% #f9dcc4 45%);
+}
+ul {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: bold;
 }
 
 table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #D9304F;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+form * {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 16px;
+}
+
+section div:nth-child(even) {
+  font-weight: bold;
+}
+/* table {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 20px;
@@ -38,4 +75,4 @@ tbody tr:last-of-type {
 tbody tr.active-row {
   font-weight: bold;
   color: #009879;
-}
+} */

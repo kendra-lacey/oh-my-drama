@@ -4,7 +4,7 @@
 
 <main>
   <% if (user) { %>
-  <h1><%= title %></h1>
+  <h1><%= title %> <img src="/assets/whale.png" alt="cute whale"></h1>
   <form id="new-form" action="/dramas" method="POST">
     <div>
       <label for="title-input">Title:</label>
@@ -18,8 +18,8 @@
         <select name="language" id="language">
           <option value="Korean">Korean</option>
           <option value="Chinese">Chinese</option>
-          <option value="Janpanese">Janpanese</option>
-          <option value="Tiawanese">Tiawanese</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Taiwanese">Taiwanese</option>
         </select>
         <button type="submit">Add Drama</button>
       </div>

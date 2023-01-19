@@ -26,10 +26,13 @@ const dramaSchema = new Schema({
   methods: {
     getAverage() {
       let total = 0
-      this.reviews.forEach(review => {
-        total += review.rating
-      });
-      return (total / this.reviews.length.toFixed(1))
+      if (this.reviews.length){
+        this.reviews.forEach(review => {
+          total += review.rating
+        });
+        total = total / this.reviews.length
+      }
+      return (total)
     }
   }
 },
