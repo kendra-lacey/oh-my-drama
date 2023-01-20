@@ -10,15 +10,6 @@ p {
   font-size:20px;
 }
 
-/* ul {
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-}
-
-li {
-  font-weight: bold;
-} */
 
 table {
   font-size: 20px;
@@ -45,6 +36,7 @@ section {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
+  padding-top: 20px;
 }
 
 section div:nth-child(even) {
