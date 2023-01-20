@@ -3,14 +3,20 @@
 <%- include('../partials/nav.ejs') %>
 
 <main>
-    <h1><%= title %></h1>
+    <h1><%= title %> <img src="/assets/kitty.png" alt= "cute kitty cat with giant pencil"></h1>
+    <div class="transparent-box">
     <form id="edit-form" 
     action="/dramas/<%= drama._id %>?_method=PUT" 
     method="POST"
     >
-      <label for="title-input">Title:</label>
-      <input type="text" value="<%= drama.title %>" name="title" id="title-input" autocomplete="off">
-      <label for="language-select" id="language-select">Language:</label>
+    <div>
+      <label for="title-input" class="title">Title:</label>
+    <div>
+      <textarea type="text-area" value="<%= drama.title %>" name="title" id="title-input" autocomplete="off"><%= drama.title %></textarea>
+    </div>
+  </div>
+  <div>
+      <label for="language-select" id="language-select"class="title">Language:</label>
       <select name="language" id="language">
         <option value="<%= drama.language %>">
           <%= drama.language %> 
@@ -20,8 +26,11 @@
         <option value="Japanese">Japanese</option>
         <option value="Taiwanese">Taiwanese</option>
       </select>
-      <button type="submit">Save Drama</button>
+      <button type="submit" class="btn btn-outline-danger">Save Drama</button>
+      </div>
     </form>
+  </div>
+  </div>
 </main>
 
 <%- include('../partials/footer.ejs') %>

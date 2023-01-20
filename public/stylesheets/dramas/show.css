@@ -1,19 +1,39 @@
 body {
   height: 100%;
   background: linear-gradient(90deg, #f9dcc4 50%, #fec89a 45%);
-  flex-direction: grid;
-  justify-content: center;
 }
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
 }
-h1 {
+
+h2 {
+  font-family: var(--cursive2);
+  font-size: 40px;
+}
+
+div > .title {
+  font-family: var(--cursive4)
+}
+div > .reviewer {
+  font-family: var(--cursive4);
+  font-size: 20px
+}
+
+body > h1 {
   font-family: var(--cursive2);
   font-size: 50px;
+  padding-top: 30px;
+  padding-left: 40px;
 }
 .transparent-box {
-  align-self: flex-start;
-  background:rgb(248, 237, 235, 0.6);
+  background:rgb(254, 200, 154, 0.3);
   margin: 30px;
   border: 1px solid  #d44950;
   display: flex;
@@ -25,9 +45,45 @@ h1 {
   height: fit-content;
   }
 
+  .ratings{
+  background:rgb(254, 200, 154, 0.3);
+  margin: 30px;
+  border: 1px solid  #d44950;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  width: 400px;
+  height: fit-content;
+  }
+
+  .ratings > button {
+    align-self: center;
+    padding: 5,5,5,5;
+  }
+
   .title {
     font-family:var(--cursive4);
     font-size: 30px; 
+  }
+
+  .review-cards {
+  margin: 30px;
+  background:rgb(248, 237, 235, 0.6);
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid  #d44950;
+  }
+
+  .card-body {
+    border-bottom: solid #d44950;
+    border-top: #d44950;
   }
 
 ul {
@@ -40,14 +96,3 @@ li {
   font-weight: bold;
 }
 
-.details {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 20px;
-}
-
-.details > .class-header {
-  text-align: center;
-  font-family: var(--cursive3);
-}

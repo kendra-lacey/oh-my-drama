@@ -9,10 +9,19 @@ h1 {
 p {
   font-size:20px;
 }
-
+.my-custom-scrollbar {
+  position: relative;
+  height: 500px;
+  overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+  display: block;
+  }
 
 table {
   font-size: 20px;
+  background:rgb(248, 237, 235, 0.6);
+  border-radius: 1em;
 }
 
 table thead th {
@@ -25,6 +34,7 @@ table thead th {
 table td {
   padding: 10px;
   text-align: center;
+  font-size: 20px;
 }
 
 form * {
@@ -52,7 +62,7 @@ color:black
 }
 td > a:hover {
   background-color: #f9dcc4 ;
-  text-decoration:none ;
+  text-decoration: none ;
 }
 a:visited {
   color:#d44950;

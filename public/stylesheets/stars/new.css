@@ -28,3 +28,8 @@ p {
 h1 {
   font-family: var(--cursive)
 }
+
+.title {
+  font-family: var(--serif);
+  font-size: 25px
+}
