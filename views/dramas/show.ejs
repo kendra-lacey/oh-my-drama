@@ -3,8 +3,8 @@
 <%- include('../partials/nav') %>
 <main>
   <h1><%= title %> </h1>
-  <section class="details"> 
-    <div>Title:</div>
+  <section  class="transparent-box" class="details"> 
+    <div class="title">Title</div>
     <div>
       <%= drama.title %>
       <% if (drama.owner) { %>
@@ -13,17 +13,17 @@
         </a>
         <% } %>
     </div>
-    <div>Language:</div>
+    <div class="title">Language</div>
     <div><%= drama.language %></div>
-    <div>Rating:</div>
+    <div class="title">Rating</div>
     <div><%= drama.getAverage() %></div>
-    <div class="card-header">Cast:</div>
-    <ul class="list-group list-group-flush">
+    <div class="title">Cast</div>
+    <ul>
       <% drama.mainChars.forEach(character => { %>
-        <li class="list-group-item"><%= character.name %></li>
+        <li><%= character.name %></li>
       <% }) %>
     </ul>
-    </section>
+    
 
     <form id="add-star-to-mainChar" action="/dramas/<%= drama._id %>/stars" method="POST">
       <select name="starId">
@@ -31,63 +31,65 @@
           <option value="<%= star._id %>"><%= star.name %></option>
         <% }) %>
       </select>
-      <button type="submit">Add a Star</button>
+      <button type="submit" class="btn btn-outline-danger" >Add a Star</button>
     </form>
-
+  </section>
+    <section class="ratings">
   <h2>Rate This Drama</h2>
   <form 
   id="add-review-form"
   action="/dramas/<%= drama._id %>/reviews"
   method="POST"
   >
-  
-  <label for="comment-textarea">Comments:</label>
+  <div class="form-group row">
+  <label for="comment-textarea" class="col-sm-2 col-form-label">Comments:</label>
+  <div class="col-sm-10">
   <textarea name="comment" id="comment-textarea"></textarea>
-  <label for="rating-select">Rating:</label>
-  <select name="rating" id="rating-select">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10"selected>10</option>
-  </select>
-  <button type="submit">Add Review</button>
+</div>
+<div class="form-group row">
+  <label for="rating-select" class="col-sm-2 col-form-label">Rating:</label>
+  <div>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10"selected>10</option>
+    </select>
+  </div>
+</div>
+  <button type="submit" class="btn btn-outline-success">Add Review</button>
+  </div>
 </form>
+</section>
+<section class="review-cards">
   <h2>Reviews 🌶️</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Comment</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
-    <tbody>
       <% drama.reviews?.forEach(review => { %>
-      <tr>
-        <td><%= review.reviewer.name %></td>
-        <td><%= review.comment %></td>
-        <td><%= review.rating %></td>
-        <td><% if (review.reviewer.equals(user?.profile)) { %>
+      <div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <div class="blockquote mb-0""><%= review.comment %></div>
+          <div>Rating</div>
+          <div class="card-title"><%= review.rating %></div>
+          <div class="reviewer"class="blockquote mb-0"> - <%= review.reviewer.name %></div>
+        <div><% if (review.reviewer.equals(user?.profile)) { %>
           <form 
             action="/dramas/<%= drama._id %>/reviews/<%= review._id %>?_method=DELETE" 
             method="POST"
             class="inline"
           >
-            <button class="btn" type="submit">Delete Review</button>
+            <button class="btn btn-outline-danger" type="submit">Delete Review</button>
           </form>
           <% } %> 
-        </td>
-        
-      </tr>
+        </div>
+      </div>
+    </div>
       <% }) %> 
-  </tbody>
-</table>
+</section>
 </main>
 
 <%- include('../partials/footer') %> 
