@@ -16,8 +16,8 @@
     <ul>
       <% drama.mainChars.forEach(character => { %>
         <li><%= character.name %></li>
-        <% }) %>
-      </ul>
+      <% }) %>
+    </ul>
       <% if (drama.owner.equals(user.profile.id)) { %>
         <a href="/dramas/<%= drama._id %>/edit">
           <button class="btn btn-outline-success btn-sm">Edit this Drama</button>
