@@ -4,23 +4,25 @@
 
 <main>
   <h1><%= title %></h1>
+  <p><em><u>Click</u> on the title to leave a review & see more details</em></p>
   <table id="list">
     <thead>
       <tr>
-        <th>Title</th>
+        <th>Title <img src="/assets/sun.png" alt="lil cute sun"></th>
         <th>Language</th>
         <th>Average-Rating</th>
-        <th><img src="/assets/sun.png" alt="lil cute sun"></th>
       </tr>
     </thead>
     <tbody>
       <% dramas.forEach(drama => { %>
         <tr>
-          <td><%= drama.title %></td>
+          <td>
+            <a  class= "titles" href="/dramas/<%= drama._id %>">
+            <%= drama.title %>
+            </a>
+          </td>
           <td><%= drama.language %></td>
           <td><%= drama.getAverage() %></td>
-          <td><a href="/dramas/<%= drama._id %>">DETAILS</a></td>
-          </td>
         </tr>
       <% }) %>
     </tbody>

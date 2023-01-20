@@ -1,6 +1,6 @@
 h1 {
   background-color: var(--header-bg);
-  font-family: var(--serif);
+  font-family: var(--cursive);
   font-size: 80px;
   font-weight: 700;
   margin: 12px 0;
@@ -10,10 +10,17 @@ h1 {
 }
 
 h2 {
-  color:#ff5c8a;
+  font-family:var(--serif);
+  color:#d44950;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 3rem;
+  background: linear-gradient(to right, black,#d44950,  #ff5722,#f9a825, #f48fb1, #d44950,black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .avatar {
-  border: solid 2px black;
+  border: solid 2px #f48fb1;
   border-radius:50px;
 }

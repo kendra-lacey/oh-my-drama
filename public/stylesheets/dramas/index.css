@@ -2,7 +2,15 @@ body {
   height: 100%;
   background: linear-gradient(90deg,#fec89a 50% #f9dcc4 45%);
 }
-ul {
+
+h1 {
+  font-family: var(--cursive)
+}
+p {
+  font-size:20px;
+}
+
+/* ul {
   margin: 0 0 16px;
   padding: 0;
   list-style: none;
@@ -10,7 +18,7 @@ ul {
 
 li {
   font-weight: bold;
-}
+} */
 
 table {
   font-size: 20px;
@@ -19,6 +27,8 @@ table {
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #D9304F;
+  font-family:var(--serif);
+  font-size: 30px;
 }
 
 table td {
@@ -40,39 +50,18 @@ section {
 section div:nth-child(even) {
   font-weight: bold;
 }
-/* table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 20px;
-  font-family: sans-serif;
-  min-width: 800px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  color:#b5838d ;
-}
 
-thead tr {
-  background-color: #fcd5ce;
-  color: #ffffff;
-  text-align: left;
+.titles {
+  text-decoration: none;
+  color: black;
 }
-td, th {
-  padding: 12px 15px;
+.titles:hover {
+color:black
 }
-
-tbody tr {
-  border-bottom: 1px solid #dddddd;
-  background-color: #dddddd;
+td > a:hover {
+  background-color: #f9dcc4 ;
+  text-decoration:none ;
 }
-
-tbody tr:nth-of-type(even) {
-  background-color: #f9dcc4;
+a:visited {
+  color:#d44950;
 }
-
-tbody tr:last-of-type {
-  border-bottom: 2px solid #fcd5ce;
-}
-
-tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-} */

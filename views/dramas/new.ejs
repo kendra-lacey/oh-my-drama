@@ -3,9 +3,12 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <body>
+  <div class = "background">
+    <div class="transparent-box">
   <% if (user) { %>
   <h1><%= title %> <img src="/assets/whale.png" alt="cute whale"></h1>
-  <form id="new-form" action="/dramas" method="POST">
+  <form id="newDrama-form" action="/dramas" method="POST">
     <div>
       <label for="title-input">Title:</label>
       <div>
@@ -21,10 +24,13 @@
           <option value="Japanese">Japanese</option>
           <option value="Taiwanese">Taiwanese</option>
         </select>
-        <button type="submit">Add Drama</button>
+        <button class="btn btn-outline-danger btn-sm" type="submit">Add Drama</button>
       </div>
     </div>
   </form>
+  </div>
+  </div>
+</body>
   <% } %>
 </main>
 

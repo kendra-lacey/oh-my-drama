@@ -12,8 +12,12 @@ html {
   margin: 0%;
 }
 :root {
-  --serif: 'Inknut Antiqua', serif;
+  --serif:'Signika Negative', serif;
   --mono: 'IBM Plex Mono', monospace;
+  --cursive: 'Berkshire Swash', cursive;
+  --cursive2: 'Covered By Your Grace', cursive;
+  --cursive3: 'Sacramento', cursive;
+  --cursive4: 'Shadows Into Light', cursive;
 }
 
 body {
@@ -45,12 +49,12 @@ nav > i {
 
 nav > a {
   margin: 10px;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
-  font-family: var(--mono);
-  font-weight:bold ;
+  font-family: var(--serif);
+  font-weight:bold;
   padding: 10px;
-  color: #f8edeb;
+  color: black;
   align-items: center;
 }
 
@@ -58,11 +62,6 @@ nav > a:visited {
   color: #d44950;
 }
 
-/* nav > a:hover {
-  color: white;
-  background-color: #ffbdc9;
-  max-height: 30px;
-} */
 
 
 main {

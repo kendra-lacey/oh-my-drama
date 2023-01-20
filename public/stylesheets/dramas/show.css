@@ -2,3 +2,25 @@ body {
   height: 100%;
   background: linear-gradient(90deg, #f9dcc4 50%, #fec89a 45%);
 }
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: var(--cursive)
+}
+ul {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+}
