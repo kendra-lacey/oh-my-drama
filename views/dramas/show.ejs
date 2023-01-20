@@ -17,10 +17,10 @@
     <div><%= drama.language %></div>
     <div>Rating:</div>
     <div><%= drama.getAverage() %></div>
-    <div>Cast:</div>
-    <ul>
+    <div class="card-header">Cast:</div>
+    <ul class="list-group list-group-flush">
       <% drama.mainChars.forEach(character => { %>
-        <li><%= character.name %></li>
+        <li class="list-group-item"><%= character.name %></li>
       <% }) %>
     </ul>
     </section>
@@ -90,4 +90,14 @@
 </table>
 </main>
 
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> 
+
+<!-- <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>  -->
